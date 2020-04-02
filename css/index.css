@@ -414,7 +414,7 @@
   margin-top: 20px;
   font-size: 16px;
 }
-.login-main form [name=username], .login-main form [name=password], .login-main form [name=repassword], .login-main form [type=submit] {
+.login-main form [name=username], .login-main form [name=password], .login-main form [name=repassword], .login-main form [type=button] {
   width: 70%;
   height: 60px;
   margin-top: 25px;
@@ -428,19 +428,20 @@
   padding-left: 10px;
   background-color: #f7f7f7;
 }
-.login-main form [type=submit] {
+.login-main form [type=button] {
   background-color: #2ad181;
   cursor: pointer;
   font-size: 24px;
   font-weight: 600;
   color: #fff;
+  text-align: center;
 }
-.login-main form > :nth-child(6) {
+.login-main form > :nth-child(7) {
   display: flex;
   align-items: center;
   margin-top: 10px;
 }
-.login-main form > :nth-child(6) a {
+.login-main form > :nth-child(7) a {
   color: #2ad181;
 }
 .login-main form > :last-child {

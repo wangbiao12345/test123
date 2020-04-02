@@ -22,7 +22,6 @@
                 <li><a href="#">新品</a></li>
             </ul>
             <div class="right">
-                <div class="login"><a href="./login.html">登录</a><a href="./register.html">注册</a></div>
                 <div class="open">
                     <i class="iconfont icon-cart1"></i>我的购物车
                     <span>0</span>
@@ -31,12 +30,13 @@
         </div>
     </div>
     <div class="login-main">
-        <form >
+        <form>
             <h3>账号登录</h3>
             <p><a href="#">手机号登录</a><span>|</span><a href="#">密码登录</a></p>
             <input type="text" placeholder="请输入手机号" name="username">
             <input type="password" placeholder="请输入密码" name="password">
-            <input type="submit" value="登录">
+            <p> <input type="checkbox">记住用户名</p>
+            <input type="button" value="登录">
             <p><a href="#">账号隐私声明</a><a href="register.html">注册账号</a></p>
         </form>
     </div>
@@ -47,7 +47,60 @@
     </div>
 
 </body>
+<script src="../js/jquery.js"></script>
+<script src="../js/cookie.js"></script>
+<script>
+    // 页面一加载就应该看看是否有记住的用户名 - 从cookie中拿uname
 
+    var uname = getCookie("uname");
+    // console.log(uname);
+    if (uname) {
+        // 给用户名的文本框添加value
+        $("[name='username']").val(uname)
+    } else {
+        $("[name='username']").val('')
+    }
+    //提交数据
+    var flage = false;
+    $("[type='checkbox']").click(function () {
+        flage = $(this).is(":checked");
+    })
+    $("[type='button']").click(function () {
+        // console.log($("[type='checkbox']").checked);
+        console.log(flage);
+        var name = $.trim($("[name='username']").val());
+        var password = $.trim($("[name='password']").val());
+        console.log(name, password);
+        $.ajax({
+            url: "../server/login.php",
+            data: {
+                name: name,
+                password: password
+            },
+            type: "post",
+            success: function (res) {
+                
+                var res=JSON.parse(res);
+                console.log(res);
+                if (res.status == 200) {
+                    setCookie("username", name, 7200);
+                    // 看看是否要记住用户名
+                    if (flage) {
+                        // 要记住 - 还是往cookie中记
+                        setCookie("uname", name, 3600 * 24 * 7);
+                    } else {
+                        removeCookie("uname");
+                    }
+                    alert(res.msg)
+                    location.href = '../index.html';
+                }else{
+                alert(res.msg);
+                return;
+                }
+            }
+        })
+    })
+</script>
 
 
 </html>

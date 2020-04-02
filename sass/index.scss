@@ -419,7 +419,7 @@
             margin-top: 20px;
             font-size: 16px;
         }
-        [name=username],[name=password],[name=repassword],[type=submit]{
+        [name=username],[name=password],[name=repassword],[type=button]{
             width: 70%;
             height: 60px;
             margin-top: 25px;
@@ -433,14 +433,15 @@
             padding-left: 10px;
             background-color: #f7f7f7;
         }
-        [type=submit]{
+        [type=button]{
             background-color: #2ad181;
             cursor: pointer;
             font-size: 24px;
             font-weight: 600;
             color: #fff;
+            text-align: center;
         }
-        >:nth-child(6){
+        >:nth-child(7){
             display: flex;
             align-items: center;
             margin-top: 10px;
