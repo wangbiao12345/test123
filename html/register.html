@@ -30,16 +30,18 @@
             </div>
         </div>
     </div>
-    <div class="login-main">
-        <form >
+    <div class="register-main">
+        <form>
             <h3>账号注册</h3>
             <p><a href="#">手机号注册</a><span>|</span><a href="#">邮箱注册</a></p>
             <input type="text" placeholder="请输入手机号" name="username">
             <input type="password" placeholder="请输入密码" name="password">
-            <input type="repassword" placeholder="再次输入密码" name="repassword">
-            <p><input type="checkbox" name="check" >已阅读并同意<a href="#">《oppo账号使用协议》</a></p>
-            <input type="submit" value="注册">
-            <p></p>
+            <input type="password" placeholder="再次输入密码" name="repassword">
+            <p class="tishi"></p>
+            <p class="checkBox"><input type="checkbox" name="check">已阅读并同意<a href="#">《oppo账号使用协议》</a></p>
+
+            <input type="button" value="注册">
+
         </form>
     </div>
     <div class="container footer">
@@ -49,56 +51,39 @@
     </div>
 
 </body>
-<script src="./js/promiseAjax.js"></script>
+<!-- <script src="../js/promiseAjax.js"></script> -->
 <script src="../js/jquery.js"></script>
+<script src="../js/test.js"></script>
 <script type="text/javascript">
-var flage = false;
-    $("[type='checkbox']").click(function () {
-        flage = $(this).is(":checked");
-    })
-    $("[type='button']").click(function () {
-        if(!flage){
-        alert("请同意协议！！！");
-        return;
-    }
-    //获取表单信息
-        var name = $.trim($("[name='username']").val());
-        var password = $.trim($("[name='password']").val());
-        var repassword = $.trim($("[name='repassword']").val());
-        var res=/^(13[0-9]|14[5|7]|15[0|1|2|3|5|6|7|8|9]|18[0|1|2|3|5|6|7|8|9])\d{8}$/
-        if(!res.test(name)){
-            return alert("请输入正确的手机号")
-        }
 
-    })
-function register(){
-    // 先同意协议
-    var agree = document.querySelector("[name='agree']");
-    if(!agree.checked){
-        alert("请同意协议！！！");
-        return;
-    }
-    // 获取用户名
-    var username = document.querySelector("#username").value.trim();
-    var password = document.querySelector("#pass").value.trim();
-    pAjax({
-        url:"./server/register.php",
-        type:"post",
-        data:{
-            username:username,
-            password:password,
-        }
-    }).then(function(res){
-        // console.log(res);
-        if(res.status==200){
-            alert(res.msg);
-            location.href = "login.html"
-        }else{
-            alert(res.msg);
-            return;
-        }
-    });
-}
-
+    // function register() {
+    //     // 先同意协议
+    //     var agree = document.querySelector("[name='agree']");
+    //     if (!agree.checked) {
+    //         alert("请同意协议！！！");
+    //         return;
+    //     }
+    //     // 获取用户名
+    //     var username = document.querySelector("#username").value.trim();
+    //     var password = document.querySelector("#pass").value.trim();
+    //     pAjax({
+    //         url: "./server/register.php",
+    //         type: "post",
+    //         data: {
+    //             username: username,
+    //             password: password,
+    //         }
+    //     }).then(function (res) {
+    //         // console.log(res);
+    //         if (res.status == 200) {
+    //             alert(res.msg);
+    //             location.href = "login.html"
+    //         } else {
+    //             alert(res.msg);
+    //             return;
+    //         }
+    //     });
+    // }
+</script>
 
 </html>

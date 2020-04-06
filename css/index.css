@@ -380,7 +380,7 @@
 }
 
 .login-main {
-  min-height: 550px;
+  min-height: 750px;
   background: url(../images/heytap_bg.1612deb5.png) no-repeat center -150px;
   padding-top: 100px;
 }
@@ -414,7 +414,10 @@
   margin-top: 20px;
   font-size: 16px;
 }
-.login-main form [name=username], .login-main form [name=password], .login-main form [name=repassword], .login-main form [type=button] {
+.login-main form [name=username],
+.login-main form [name=password],
+.login-main form [name=repassword],
+.login-main form [type=button] {
   width: 70%;
   height: 60px;
   margin-top: 25px;
@@ -439,6 +442,7 @@
 .login-main form > :nth-child(7) {
   display: flex;
   align-items: center;
+  justify-content: space-around;
   margin-top: 10px;
 }
 .login-main form > :nth-child(7) a {
@@ -456,8 +460,74 @@
   color: #2ad181;
 }
 
+.register-main {
+  min-height: 750px;
+  background: url(../images/heytap_bg.1612deb5.png) no-repeat center -150px;
+  padding-top: 100px;
+}
+.register-main form {
+  width: 500px;
+  margin: 0 auto;
+  background-color: #fff;
+  border: 1px solid #ccc;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  flex-wrap: wrap;
+  padding-bottom: 20px;
+}
+.register-main form > h3 {
+  font-size: 30px;
+  font-weight: 600;
+  color: #a09c9a;
+  margin-top: 30px;
+}
+.register-main form > :nth-child(2) {
+  display: flex;
+  justify-content: space-evenly;
+  width: 100%;
+  margin-top: 20px;
+  font-size: 16px;
+}
+.register-main form [name=username],
+.register-main form [name=password],
+.register-main form [name=repassword],
+.register-main form [type=button] {
+  width: 70%;
+  height: 60px;
+  margin-top: 25px;
+  border-radius: 10px;
+  font-size: 16px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  background-color: #f7f7f7;
+}
+.register-main form [type=button] {
+  background-color: #2ad181;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+  text-align: center;
+  padding: 0;
+}
+.register-main form .checkBox {
+  display: flex;
+  align-items: center;
+}
+
 .list-main {
-  min-height: 550px;
+  min-height: 750px;
 }
 .list-main ul {
   display: flex;
@@ -519,72 +589,258 @@
 }
 
 .details-main {
-  min-height: 550px;
+  min-height: 750px;
+  background: url(../images/heytap_bg.1612deb5.png) center -150px;
 }
-.details-main .left {
-  width: 400px;
+.details-main .box {
+  margin: 50px 100px;
+  float: left;
+  position: relative;
+  width: 500px;
+  height: 600px;
+}
+.details-main .box .left-box {
+  width: 500px;
+  height: 600px;
+  float: left;
+}
+.details-main .box .left-box .top {
+  width: 500px;
   height: 500px;
-  margin-left: 100px;
-  margin-top: 50px;
+  position: relative;
+  margin-bottom: 20px;
 }
-.details-main .left img {
+.details-main .box .left-box .top .img,
+.details-main .box .left-box .top .img img {
   width: 100%;
   height: 100%;
 }
-.details-main .left .m {
-  width: 400px;
-  height: 400px;
-  /* border:1px solid #000; */
+.details-main .box .left-box .top .xianshi {
+  width: 150px;
+  height: 150px;
+  background-color: rgba(240, 110, 77, 0.5);
+  position: absolute;
+  left: 0;
+  top: 0;
+  display: none;
+}
+.details-main .box .left-box .footer1 {
+  width: 100%;
+  height: 80px;
+}
+.details-main .box .left-box .footer1 .img1 {
+  width: 60px;
+  height: 60px;
+  margin-left: 30px;
+  float: left;
+}
+.details-main .box .left-box .footer1 .img1 img {
+  width: 100%;
+  height: 100%;
+}
+.details-main .box .right-box {
+  width: 500px;
+  height: 500px;
+  position: absolute;
+  left: 100%;
+  margin-left: 50px;
+  background: #fff url(../images/middle-banner-01-findx2pro.jpg);
+  background-size: 333.33% 333.33%;
+  display: none;
+}
+.details-main .right {
+  float: right;
+  margin-top: 50px;
+  width: 620px;
+}
+.details-main .right h3 {
+  margin-right: 100px;
+  font-size: 30px;
+}
+.details-main .right h3 span {
+  font-size: 16px;
+  color: red;
+}
+.details-main .right p {
+  margin-top: 50px;
+  font-size: 18px;
+}
+.details-main .right [type=radio] {
+  margin-left: 10px;
+}
+.details-main .right [type=button] {
+  width: 70%;
+  height: 60px;
+  margin-top: 25px;
+  border-radius: 10px;
+  -webkit-border-radius: 10px;
+  -moz-border-radius: 10px;
+  -ms-border-radius: 10px;
+  -o-border-radius: 10px;
+  border: none;
+  padding-left: 10px;
+  background-color: #2ad181;
+  cursor: pointer;
+  font-size: 24px;
+  font-weight: 600;
+  color: #fff;
+}
+
+.car-main {
+  min-height: 750px;
+  background: url(../images/heytap_bg.1612deb5.png) center -150px;
+}
+.car-main .cart-thead {
+  color: #666;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 auto 10px;
+  padding: 5px 0;
+  background: #f3f3f3;
+  border: 1px solid #e9e9e9;
+  border-top: 0;
   position: relative;
+  width: 990px;
 }
-.details-main .left .small ul li {
-  margin: 0 5px;
-  border: 1px solid #0f0;
+.car-main .cart-thead .t-checkbox {
+  color: #666;
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  padding-top: 7px;
+  width: 122px;
+  padding-left: 11px;
 }
-.details-main .left .small ul li img {
+.car-main .cart-thead .t-checkbox .cart-checkbox {
+  color: #666;
+  line-height: 18px;
+  position: relative;
+  z-index: 3;
+  float: left;
+  margin-right: 5px;
+}
+.car-main .cart-thead .t-checkbox .cart-checkbox label {
+  display: none;
+}
+.car-main .cart-thead .t-checkbox .cart-checkbox .jdcheckbox {
+  float: none;
+  position: relative;
+  z-index: 5;
   vertical-align: middle;
+  margin: 0 3px 0 0;
 }
-.details-main .left .small ul {
-  width: 400px;
-  height: 100px;
-  display: flex;
-  align-items: center;
-  justify-content: flex-start;
+.car-main .cart-thead .t-goods {
+  color: #666;
+  line-height: 32px;
+  float: left;
+  width: 208px;
 }
-.details-main .left .small ul li.active {
-  border-color: #f00;
+.car-main .cart-thead .t-props {
+  color: #666;
+  line-height: 32px;
+  float: left;
+  height: 32px;
+  padding: 0 10px 0 20px;
+  width: 140px;
 }
-.details-main .left .shade {
+.car-main .cart-thead .t-price {
+  width: 120px;
+  padding-right: 40px;
+  text-align: right;
+  float: left;
+}
+.car-main .cart-thead .t-quantity {
+  width: 80px;
+  text-align: center;
+  float: left;
+}
+.car-main .cart-thead .t-sum {
   width: 100px;
-  height: 100px;
-  background: rgba(255, 255, 0, 0.5);
-  position: absolute;
-  left: 0;
-  top: 0;
-  display: none;
+  padding-right: 40px;
+  text-align: right;
+  float: left;
 }
-.details-main .left .big {
-  width: 400px;
-  height: 400px;
-  position: absolute;
-  left: 105%;
-  top: 0;
-  border: solid;
-  background-image: url("./images/big1.jpg");
-  background-size: 1600px 1600px;
-  display: none;
-  background-repeat: no-repeat;
+.car-main .cart-thead .t-action {
+  width: 75px;
+  float: right;
 }
-.details-main .left .middle {
-  width: 400px;
-  height: 400px;
-  border: 1px solid #000;
-  position: absolute;
-  left: 0;
-  top: 0;
+.car-main .list {
+  width: 990px;
+  margin: 0 auto;
+  padding-top: 15px;
+  overflow: hidden;
+  padding-bottom: 15px;
+  background-color: #fff;
+  border: 1px solid #333;
 }
-.details-main .left .shade:hover {
-  cursor: move;
+.car-main .list [type=checkbox] {
+  float: left;
+  margin-left: 11px;
+  padding-top: 7px;
+}
+.car-main .list img {
+  width: 80px;
+  height: 80px;
+  margin-left: 12px;
+  float: left;
+}
+.car-main .list .name1 {
+  float: left;
+  width: 208px;
+  height: 40px;
+  line-height: 20px;
+  font-size: 14px;
+  margin-left: 10px;
+}
+.car-main .list .name1 a:hover {
+  color: red;
+}
+.car-main .list .jiesao {
+  float: left;
+  width: 150px;
+  height: 55px;
+  padding-left: 20px;
+}
+.car-main .list .money {
+  float: left;
+  width: 130px;
+  height: 55px;
+  text-align: right;
+}
+.car-main .list .shuliang {
+  float: left;
+  width: 80px;
+  height: 22px;
+  margin-left: 46px;
+  border: 1px solid #333;
+}
+.car-main .list .shuliang button {
+  width: 20px;
+  height: 22px;
+  padding: 0;
+  border: 0;
+  text-align: center;
+  line-height: 22px;
+  float: left;
+}
+.car-main .list .shuliang [type=number] {
+  float: left;
+  width: 40px;
+  height: 22px;
+  margin: 0;
+  padding: 0;
+  border: 0;
+}
+.car-main .list .xiaoji {
+  float: left;
+  width: 96px;
+  height: 55px;
+  text-align: right;
+}
+.car-main .list .caozuo {
+  float: right;
+  margin-right: 10px;
 }
 
 .footer {
@@ -628,7 +884,8 @@
   color: #fff;
   margin-bottom: 30px;
 }
-.footer > .content > .right p, .footer > .content > .right a {
+.footer > .content > .right p,
+.footer > .content > .right a {
   line-height: 40px;
   font-size: 18px;
   color: #a09c9a;
