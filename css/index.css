@@ -811,7 +811,7 @@
 .car-main .list .shuliang {
   float: left;
   width: 80px;
-  height: 22px;
+  height: 40px;
   margin-left: 46px;
   border: 1px solid #333;
 }
@@ -832,6 +832,9 @@
   padding: 0;
   border: 0;
 }
+.car-main .list .shuliang span {
+  color: red;
+}
 .car-main .list .xiaoji {
   float: left;
   width: 96px;
@@ -841,6 +844,81 @@
 .car-main .list .caozuo {
   float: right;
   margin-right: 10px;
+}
+.car-main .cart-tfoot {
+  color: #666;
+  display: block;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 auto 10px;
+  padding: 5px 0;
+  background: #f3f3f3;
+  border: 1px solid #e9e9e9;
+  border-top: 0;
+  position: relative;
+  width: 990px;
+}
+.car-main .cart-tfoot .t-checkbox {
+  color: #666;
+  float: left;
+  height: 18px;
+  line-height: 18px;
+  padding-top: 7px;
+  width: 122px;
+  padding-left: 11px;
+}
+.car-main .cart-tfoot .t-checkbox .cart-checkbox {
+  color: #666;
+  line-height: 18px;
+  position: relative;
+  z-index: 3;
+  float: left;
+  margin-right: 5px;
+}
+.car-main .cart-tfoot .t-checkbox .cart-checkbox label {
+  display: none;
+}
+.car-main .cart-tfoot .t-checkbox .cart-checkbox .jdcheckbox {
+  float: none;
+  position: relative;
+  z-index: 5;
+  vertical-align: middle;
+  margin: 0 3px 0 0;
+}
+.car-main .cart-tfoot .t-goods {
+  color: #666;
+  line-height: 32px;
+  float: left;
+  width: 208px;
+}
+.car-main .cart-tfoot .t-props {
+  color: #666;
+  line-height: 32px;
+  float: left;
+  height: 32px;
+  padding: 0 10px 0 20px;
+  width: 140px;
+}
+.car-main .cart-tfoot .t-price {
+  width: 120px;
+  padding-right: 40px;
+  text-align: right;
+  float: left;
+}
+.car-main .cart-tfoot .t-quantity {
+  width: 80px;
+  text-align: center;
+  float: left;
+}
+.car-main .cart-tfoot .t-sum {
+  width: 100px;
+  padding-right: 40px;
+  text-align: right;
+  float: left;
+}
+.car-main .cart-tfoot .t-action {
+  width: 75px;
+  float: right;
 }
 
 .footer {

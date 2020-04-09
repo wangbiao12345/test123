@@ -24,8 +24,8 @@
             <div class="right">
                 <div class="login"><a href="./html/login.html">登录</a><a href="./html/register.html">注册</a></div>
                 <div class="open">
-                    <i class="iconfont icon-cart1"></i>我的购物车
-                    <span>0</span>
+                    <a href="./html/car.html"><i class="iconfont icon-cart1"></i>我的购物车
+                    <span>0</span></a>
                 </div>
             </div>
         </div>
@@ -35,58 +35,58 @@
     <div class="container">
         <div class="content index-main">
             <div class="left">
-                <a href="#">
+                <a href="./html/details.html?id=6">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=6">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=6">查看详情</a><a href="./html/details.html?id=6">前去购买</a></p>
             </div>
             <div class="right">
-                <a href="#">
+                <a href="./html/details.html?id=5">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=5">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=5">查看详情</a><a href="./html/details.html?id=5">前去购买</a></p>
             </div>
             <div class="left1">
-                <a href="#">
+                <a href="./html/details.html?id=4">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=4">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=4">查看详情</a><a href="./html/details.html?id=4">前去购买</a></p>
             </div>
             <div class="right1">
-                <a href="#">
+                <a href="./html/details.html?id=3">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=3">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=3">查看详情</a><a href="./html/details.html?id=3">前去购买</a></p>
             </div>
             <div class="left2">
-                <a href="#">
+                <a href="./html/details.html?id=2">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=2">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=2">查看详情</a><a href="./html/details.html?id=2">前去购买</a></p>
             </div>
             <div class="right2">
-                <a href="#">
+                <a href="./html/details.html?id=1">
                     <img src="./images/middle-banner-01-findx2pro.jpg" alt="">
                 </a>
-                <p><a href="#">Find X2 Pro 兰博基尼版
+                <p><a href="./html/details.html?id=1">Find X2 Pro 兰博基尼版
                     </a></p>
                 <p>超感设计，120Hz QHD+ 超感屏</p>
-                <p><a href="#">查看详情</a><a href="">前去购买</a></p>
+                <p><a href="./html/details.html?id=1">查看详情</a><a href="./html/details.html?id=1">前去购买</a></p>
             </div>
         </div>
     </div>
@@ -171,7 +171,29 @@
         $(".login").css("display","block")
         $(".open").css("display","none")
     }
-
+    $(document).ready(function () {
+    var a = getCookie("uname");
+    if (a) {
+        $.ajax({
+            type: "post",
+            url: "./server/car1.php",
+            data: {
+                name: a
+            },
+        }).done(function (res) {
+            var res = JSON.parse(res);
+            if (res.status == 200) {
+                var str =0;
+                for (var i in res) {
+                    if (res[i].id) {
+                        str++;
+                    }
+                }
+                $(".open>a>span").text(str)
+            }
+        })
+    }
+})
 </script>
 
 

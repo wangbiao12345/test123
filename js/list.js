@@ -7,7 +7,29 @@ if (a) {
     $(".open").css("display", "none")
 }
 
-console.log($("#list"));
+$(document).ready(function () {
+    var a = getCookie("uname");
+    if (a) {
+        $.ajax({
+            type: "post",
+            url: "../server/car1.php",
+            data: {
+                name: a
+            },
+        }).done(function (res) {
+            var res = JSON.parse(res);
+            if (res.status == 200) {
+                var str =0;
+                for (var i in res) {
+                    if (res[i].id) {
+                        str++;
+                    }
+                }
+                $(".open>a>span").text(str)
+            }
+        })
+    }
+})
 $.ajax({
     url: "../server/list.php",
     type: "post",

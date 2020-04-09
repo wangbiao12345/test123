@@ -22,10 +22,10 @@ if($row){
             $row=mysqli_fetch_assoc($res);
             if($row){
                 $shuliang=$row["shuliang"]+1;
-                $res = mysqli_query($con,"UPDATE cart SET shuliang='$shuliang'  WHERE shopColor='$color' and shopXh='$nc' and shopName='$shopName'");
+                $res = mysqli_query($con,"UPDATE cart SET shuliang='$shuliang',kucun='$kuc'  WHERE shopColor='$color' and shopXh='$nc' and shopName='$shopName'");
                 
             }else{
-                $res = mysqli_query($con,"insert into cart(shopName,name,shuliang,shopXh,shopMoney,shopcolor,shopimg) values('$shopName','$name',1,'$nc','$money','$color','$imgs')");
+                $res = mysqli_query($con,"insert into cart(shopName,name,shuliang,shopXh,shopMoney,shopcolor,shopimg,kucun) values('$shopName','$name',1,'$nc','$money','$color','$imgs','$kuc')");
             }
             $arr = [
                 "msg"=>"成功",

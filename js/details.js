@@ -94,7 +94,30 @@ function getUrl(variable) {
     return (false);
 }
 
+    
+
 $(document).ready(function () {
+    var a = getCookie("uname");
+    if (a) {
+        $.ajax({
+            type: "post",
+            url: "../server/car1.php",
+            data: {
+                name: a
+            },
+        }).done(function (res) {
+            var res = JSON.parse(res);
+            if (res.status == 200) {
+                var str =0;
+                for (var i in res) {
+                    if (res[i].id) {
+                        str++;
+                    }
+                }
+                $(".open>a>span").text(str)
+            }
+        })
+    }
     var id = getUrl("id")
     // console.log(id);
     $.ajax({
@@ -194,7 +217,7 @@ $(document).ready(function () {
                         if (res.status == 200) {
                             console.log(res);
                             $(".kuc").text(res.kucun)
-                        if (res.kucun == 0) {
+                        if (res.kucun <= 0) {
                             $(":button").attr("disabled", "disabled").css({
                                 opacity: 0.5,
                                 cursor: "not-allowed"
